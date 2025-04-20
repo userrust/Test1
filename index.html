@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="hello()">Hello</button>
+    <script>
+        async function hello() {
+        const response = await fetch("https://test-postgrest-fastapi.onrender.com/new_text", {
+            method: "POST",
+            headers: {"Accept": "application/json", "Content-Type": "application/json"},
+            body: JSON.stringify({
+                user_id: "Hello",
+                text: "Hello"
+            })
+        })
+    }
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
 from database import add_message
-
+from fastapi.responses import FileResponse
 app = FastAPI()
 
 
@@ -12,7 +12,7 @@ class TextSchema(BaseModel):
 
 @app.get("/")
 async def f():
-    return "Hello"
+    return FileResponse("index.html")
 
 
 @app.post("/new_text")
