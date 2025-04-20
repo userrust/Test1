@@ -18,7 +18,6 @@ async def f():
 @app.post("/new_text")
 async def new(data: TextSchema):
     try:
-
         await add_message(data.user_id, data.text)
 
         return True
